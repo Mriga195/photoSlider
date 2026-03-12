@@ -1,34 +1,46 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import useLocalStorage from './hooks/useLocalStorage'
+
+
+const dummy_data = [
+  {
+    id: 1,
+    src: "picsum.photos/150",
+    filename: "placeholder_1",
+    caption: "auto_caption_1",
+    customCaption: "user_provided_caption_1"
+  },
+  {
+    id: 2,
+    src: "picsum.photos/160",
+    filename: "placeholder_2",
+    caption: "auto_caption_2",
+    customCaption: "user_provided_caption_2"
+  },
+  {
+    id: 3,
+    src: "picsum.photos/154",
+    filename: "placeholder_3",
+    caption: "auto_caption_3",
+    customCaption: "user_provided_caption_3"
+  },
+  {
+    id: 4,
+    src: "picsum.photos/145",
+    filename: "placeholder_4",
+    caption: "auto_caption_4",
+    customCaption: "user_provided_caption_4"
+  },
+]
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [photos, setPhotos] = useLocalStorage("photos", dummy_data)
+  const [theme, setTheme] = useLocalStorage("theme", 'A')
+  const [playbackMode, setPlaybackMode] = useLocalStorage('playback-mode', 'A')
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <></>
   )
 }
 
