@@ -1,0 +1,58 @@
+.reorder-wrapper {
+    flex-grow: 1; /* Take up remaining space */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Horizontal scroll if too many photos */
+    scrollbar-width: thin; /* Clean look for Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari to keep it "sleek" */
+.reorder-wrapper::-webkit-scrollbar {
+    height: 4px;
+}
+.reorder-wrapper::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.thumbnail-wrapper {
+    display: flex;
+    gap: 8px;
+    padding: 5px;
+}
+
+.card {
+    position: relative;
+    height: 6vh; /* Scale relative to the bar height */
+    aspect-ratio: 1/1;
+    cursor: grab;
+    flex-shrink: 0; /* Prevent images from squishing */
+    border: 1px solid #444;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .caption {
+    display: none; /* Hide caption in the bar to save space */
+}
+
+/* Show caption on hover if you really need it */
+.card:hover .caption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    font-size: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* this file is ai generated. Will do myself once i get the gist of it */

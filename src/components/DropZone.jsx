@@ -36,7 +36,7 @@ const dummy_data = [
 const createCaption = (file) => {
     const filename = file.substr(0, file.lastIndexOf("."))
 
-    const name = filename.replace("-", " ").split(" ").map(word => word[0].toUpperCase() + word.substr(1)).join(" ")
+    const name = filename.replaceAll("-", " ").split(" ").map(word => word[0].toUpperCase() + word.substr(1)).join(" ")
 
     return name;
 }

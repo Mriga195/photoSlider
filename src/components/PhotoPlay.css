@@ -1,0 +1,18 @@
+.photo-wrapper {
+    height: 90vh;
+    /* background-color: black; */
+    position: relative;
+} 
+
+.image {
+    height: 100%;
+    width: 100%;
+}
+
+.caption {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    background-color: white;
+}
